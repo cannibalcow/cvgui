@@ -18,7 +18,7 @@ module.exports = function(environment) {
       // when it is created
     },
     contentSecurityPolicy: {
-      'connect-src' : "'self' http://localhost:8080"
+      'connect-src' : "'self' http://192.168.26.178:8080"
     }
   };
 

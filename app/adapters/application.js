@@ -6,5 +6,5 @@ export default JSONAPIAdapter.extend({
 
 export default DS.RESTAdapter.extend({
   namespace: 'api',
-  host: 'http://localhost:8080'
+  host: 'http://192.168.26.178:8080'
 });
