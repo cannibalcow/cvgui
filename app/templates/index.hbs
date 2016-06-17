@@ -2,10 +2,10 @@
   <ul class="list-inline">
   {{#each model as |cv|}}
     <li>
-        <a href="#" class="thumbnail">
+        {{#link-to "cv" cv._id }}
         <img src="http://localhost:8080/api/image/{{cv.employee.image}}" style="width: 150px"/>
         <h3>{{cv.employee.firstname}} {{cv.employee.lastname}}</h3>
-      </a>
+        {{/link-to}}
     </li>
   {{/each}}
   </ul>

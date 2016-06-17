@@ -1,1 +1,43 @@
-{{outlet}}
+<h1 class="page-header text-right">{{model.employee.firstname}} {{model.employee.lastname}}</h1>
+<div class="row">
+  <div class="col-md-9">
+    <h1> {{model.description.tagline}} </h1>
+    <p>{{model.description.text}}</p>
+  </div>
+  <div class="col-md-3">
+    <img src="http://localhost:8080/api/image/{{model.employee.image}}" style="width: 250px"/>
+  </div>
+</div>
+
+<div class="row">
+  <h2 class="page-header">Kunskap</h2>
+  {{#each model.properties as |prop|}}
+    <div class="col-md-3">
+      <h3>{{prop.title}}</h3>
+      <ul>
+        {{#each prop.items as |item|}}
+          <li>{{item}}</li>
+          {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>
+
+<div class="row">
+  <h2 class="page-header">Tidigare uppdrag</h2>
+  {{#each model.previousAssignments as |ass|}}
+    <h3 class="page-header">{{ass.title}} {{ass.startYear}} {{ass.endYear}}</h3>
+    <h4>Roll</h4>
+    <p>{{ass.role}}</p>
+
+    <h4>Beskrivning</h4>
+    <p>{{ass.description}}</p>
+
+    <h4>Teknik</h4>
+    <ul>
+    {{#each ass.technology as |tech|}}
+      <li>{{tech}}</li>
+    {{/each}}
+    </ul>
+  {{/each}}
+</div>
